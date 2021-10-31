@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="box1">
+    <img id="imageC" src="{{ contact.imageC }}" alt="image caller" />
+  </div>
+  <div class="box2">
+    {{ contact.nameC }}
+    <div *ngIf="contact.nameC === ''">
+      <img id="imageW" src="{{ imageW }}" alt="image warning" />
+    </div>
+  </div>
+  <div class="box3">
+    {{ contact.phoneC }}
+    <div *ngIf="contact.phoneC === ''">
+      <img id="imageW" src="{{ imageW }}" alt="image warning" />
+    </div>
+  </div>
+</div>

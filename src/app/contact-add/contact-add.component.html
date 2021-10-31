@@ -1,0 +1,40 @@
+<form>
+  <div class="wrapper">
+    <div class="box1">
+      <img id="imageC" src="{{ imageC }}" alt="image caller" />
+    </div>
+    <div class="box2">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="input"
+        [(
+        ngModel
+        )]="contact.nameC"
+      />
+      <div>
+        <img id="imageW" src="{{ imageW }}" alt="image warning" />
+      </div>
+    </div>
+    <div class="box3">
+      <input
+        id="phone"
+        name="phone"
+        class="input"
+        type="tel"
+      />
+      <div>
+        <img id="imageW" src="{{ imageW }}" alt="image warning" />
+      </div>
+    </div>
+    <br />
+    <div class="box4">
+      <input
+        type="button"
+        (click)="addContact('contact.nameC', 'contact.phoneC',imageW)"
+        value="Ajouter un contact"
+      />
+    </div>
+  </div>
+</form>
