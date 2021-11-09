@@ -1,7 +1,7 @@
 .wrapper {
   display: grid;
   border: solid red;
-  width: 290px;
+  width: 320px;
   height: 100%;
   grid-gap: 2px;
   margin: 0 auto;
@@ -41,5 +41,5 @@
   height: 24px;
   width: 24px;
   position: absolute;
-  right: 500px;
+  right: 560px;
 }

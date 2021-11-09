@@ -6,12 +6,10 @@
     <div class="box2">
       <input
         type="text"
-        id="name"
-        name="name"
         class="input"
-        [(
-        ngModel
-        )]="contact.nameC"
+        id="name"
+        #nameCont
+
       />
       <div>
         <img id="imageW" src="{{ imageW }}" alt="image warning" />
@@ -20,9 +18,9 @@
     <div class="box3">
       <input
         id="phone"
-        name="phone"
         class="input"
         type="tel"
+        #phoneCont
       />
       <div>
         <img id="imageW" src="{{ imageW }}" alt="image warning" />
@@ -30,11 +28,9 @@
     </div>
     <br />
     <div class="box4">
-      <input
-        type="button"
-        (click)="addContact('contact.nameC', 'contact.phoneC',imageW)"
-        value="Ajouter un contact"
-      />
+      <button
+        (click)="addContact(nameCont.value, phoneCont.value)"
+      >Ajouter un contact</button>
     </div>
   </div>
 </form>
