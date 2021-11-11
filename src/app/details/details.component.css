@@ -1,0 +1,14 @@
+#imageC {
+    height: 144px;
+    width: 144px;
+}
+#name{
+    width: 150px;
+    height: auto;
+    border: solid;
+}
+#phone{
+    width: 150px;
+    height: auto;
+    border: solid;
+}

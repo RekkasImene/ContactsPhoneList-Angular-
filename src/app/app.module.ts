@@ -4,12 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactAddComponent } from './contact-add/contact-add.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    ContactAddComponent
+    ContactAddComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

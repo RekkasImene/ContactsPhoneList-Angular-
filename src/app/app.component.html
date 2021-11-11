@@ -8,9 +8,14 @@
   [name]="contact.nameC"
   [phone]="contact.phoneC"
   [image]="contact.imageC"
+  (contactEvent)="onShowDetails($event)"
 ></app-contact>
 <app-contact-add (newContact)="addNewContact($event)"></app-contact-add>
 <br />
 <div style="text-align: center">
   <button (click)="addContactVide()">Ajouter contact vide</button>
+</div>
+<div *ngIf="contactDetailsName">
+  <h1>Détails</h1>
+  <app-details [name]="contactDetailsName"> </app-details>
 </div>

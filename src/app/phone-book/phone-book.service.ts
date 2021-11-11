@@ -36,14 +36,14 @@ export class PhoneBookService {
 
   constructor() {}
 
-  getContact(name: string): Contact {
+  getContact(name: String): Contact {
     return this.contacts.find((contact) => contact.nameC === name) as Contact;
   }
   getContacts(): Contact[] {
     return this.contacts;
   }
 
-  addNewContact(nameCont: string, phoneCont: string) {
+  addNewContact(nameCont: String, phoneCont: String) {
     let contact: Contact = {
       nameC: nameCont,
       phoneC: phoneCont,

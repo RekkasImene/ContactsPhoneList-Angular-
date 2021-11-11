@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { Contact } from '../contact';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,15 +6,15 @@ import { Contact } from '../contact';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  //contact!: Contact;
   @Input() name!: String;
   @Input() phone!: String;
   @Input() image!: String;
   imageW: String = '../../assets/images/warning.png';
 
-  /*constructor(private phoneBookService: PhoneBookService) {}*/
+  @Output() contactEvent = new EventEmitter <String>();
 
-  /*ngOnInit(): void {
-    this.contact = this.phoneBookService.getContact(this.name);
-  }*/
+  showDetails (name:string) {
+    this.contactEvent.emit (name);
+    }
+
 }
