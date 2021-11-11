@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Contact } from '../contact';
 import { PhoneBookService } from '../phone-book/phone-book.service';
 @Component({
@@ -6,29 +6,22 @@ import { PhoneBookService } from '../phone-book/phone-book.service';
   templateUrl: './contact-add.component.html',
   styleUrls: ['./contact-add.component.css'],
 })
-export class ContactAddComponent implements OnInit {
-  contact!: Contact;
-  @Input() name!: String;
-  contacts= [] as Contact[];
+export class ContactAddComponent {
+  imageW: String = '/assets/images/warning.png';
+  imageC: String = '/assets/images/default-icon.jpg';
 
-  imageW: String = './../assets/images/warning.png';
-  imageC: String = './../assets/images/default-icon.jpg';
-
-  /*@ViewChild('nameCont') nameCont: ElementRef;
-  @ViewChild('phoneCont') phoneCont: ElementRef;
-  this.nameCont.nativeElement.value;
-    this.contact.phoneC = this.phoneCont.nativeElement.value;*/
+  @Output() newContact = new EventEmitter<{nameC:string, phoneC:string}>();
 
   constructor(private phoneBookService: PhoneBookService) {}
 
-  ngOnInit(): void {
+  /* ngOnInit(): void {
     this.contact = this.phoneBookService.getContact(this.name);
-  }
-  addContact(nameCont: String,phoneCont:String) {
-    this.contacts= this.phoneBookService.getContacts();
-    this.contact.nameC = nameCont;
-    this.contact.phoneC = phoneCont;
-    this.contact.imageC = this.imageC;
-    this.contacts.push(this.contact);
+  }*/
+  /*addContact(nameCont: string, phoneCont: string) {
+    this.phoneBookService.addContact(nameCont, phoneCont);
+  }*/
+
+  addNewContact(valueName: string, valuePhone: string) {
+    this.newContact.emit({nameC :valueName, phoneC: valuePhone});
   }
 }

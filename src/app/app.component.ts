@@ -15,4 +15,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.contacts = this.phoneBookService.getContacts();
   }
+  addContactVide() {
+    this.phoneBookService.addContactVides();
+  }
+
+  addNewContact(newContact: { nameC: string,phoneC:string}) {
+    this.phoneBookService.addNewContact(newContact.nameC, newContact.phoneC);
+  }
 }

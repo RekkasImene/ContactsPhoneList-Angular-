@@ -1,17 +1,21 @@
 <div class="wrapper">
   <div class="box1">
-    <img id="imageC" src="{{ contact.imageC }}" alt="image caller" />
+    <img id="imageC" src="{{ image }}" alt="image caller" />
   </div>
   <div class="box2">
-    {{ contact.nameC }}
-    <div *ngIf="contact.nameC === ''">
+    <input type="text" class="input" id="name" #nameCont value="{{ name }}" />
+    <div *ngIf="name === ''">
       <img id="imageW" src="{{ imageW }}" alt="image warning" />
     </div>
   </div>
   <div class="box3">
-    {{ contact.phoneC }}
-    <div *ngIf="contact.phoneC === ''">
+    <input id="phone" class="input" type="tel" #phoneCont value="{{ phone }}" />
+    <div *ngIf="phone === ''">
       <img id="imageW" src="{{ imageW }}" alt="image warning" />
     </div>
   </div>
+  <div class="box4">
+    <button>Modifier</button>
+  </div>
+  <br />
 </div>

@@ -5,6 +5,7 @@ import { Contact } from '../contact';
   providedIn: 'root',
 })
 export class PhoneBookService {
+  imageC: String = '../../assets/images/default-icon.jpg';
   private contacts: Contact[] = [
     {
       nameC: 'Coccinelle',
@@ -35,10 +36,27 @@ export class PhoneBookService {
 
   constructor() {}
 
-  getContact(name: String): Contact {
+  getContact(name: string): Contact {
     return this.contacts.find((contact) => contact.nameC === name) as Contact;
   }
   getContacts(): Contact[] {
     return this.contacts;
+  }
+
+  addNewContact(nameCont: string, phoneCont: string) {
+    let contact: Contact = {
+      nameC: nameCont,
+      phoneC: phoneCont,
+      imageC: this.imageC,
+    };
+    this.contacts.push(contact);
+  }
+  addContactVides() {
+    let contact: Contact = {
+      nameC: '',
+      phoneC: '',
+      imageC: this.imageC,
+    };
+    this.contacts.push(contact);
   }
 }

@@ -6,6 +6,11 @@
 <app-contact
   *ngFor="let contact of contacts"
   [name]="contact.nameC"
+  [phone]="contact.phoneC"
+  [image]="contact.imageC"
 ></app-contact>
-<app-contact-add></app-contact-add>
-
+<app-contact-add (newContact)="addNewContact($event)"></app-contact-add>
+<br />
+<div style="text-align: center">
+  <button (click)="addContactVide()">Ajouter contact vide</button>
+</div>

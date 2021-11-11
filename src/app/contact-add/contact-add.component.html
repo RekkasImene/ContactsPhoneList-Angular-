@@ -4,33 +4,22 @@
       <img id="imageC" src="{{ imageC }}" alt="image caller" />
     </div>
     <div class="box2">
-      <input
-        type="text"
-        class="input"
-        id="name"
-        #nameCont
-
-      />
+      <input type="text" class="input" id="name" #nameCont />
       <div>
         <img id="imageW" src="{{ imageW }}" alt="image warning" />
       </div>
     </div>
     <div class="box3">
-      <input
-        id="phone"
-        class="input"
-        type="tel"
-        #phoneCont
-      />
+      <input id="phone" class="input" type="tel" #phoneCont />
       <div>
         <img id="imageW" src="{{ imageW }}" alt="image warning" />
       </div>
     </div>
     <br />
     <div class="box4">
-      <button
-        (click)="addContact(nameCont.value, phoneCont.value)"
-      >Ajouter un contact</button>
+      <button (click)="addNewContact(nameCont.value, phoneCont.value)">
+        Ajouter un contact
+      </button>
     </div>
   </div>
 </form>
