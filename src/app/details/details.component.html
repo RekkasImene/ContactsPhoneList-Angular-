@@ -1,12 +1,13 @@
-<div *ngIf ="contact">
+<h1>Détails</h1>
+<div *ngIf="contact">
   <div>
     <img id="imageC" src="{{ contact.imageC }}" alt="image caller" />
   </div>
   <div>
     Nom :
-    <div id="name">{{contact.nameC}}</div>
+    <div id="name">{{ contact.nameC }}</div>
     <br />
     Téléphone :
-    <div id="phone">{{contact.phoneC}}</div>
+    <div id="phone">{{ contact.phoneC }}</div>
   </div>
 </div>

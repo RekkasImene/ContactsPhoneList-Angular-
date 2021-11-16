@@ -10,7 +10,7 @@ import { Contact } from './contact';
 export class AppComponent implements OnInit {
   title = 'Contacts';
   contacts!: Contact[];
-  contactDetailsName!: String ;
+  //contactDetailsName!: String ;
 
   constructor(private phoneBookService: PhoneBookService) {}
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.phoneBookService.addNewContact(newContact.nameC, newContact.phoneC);
   }
 
-  onShowDetails ( contactName : String ) {
+  /*onShowDetails ( contactName : String ) {
     this.contactDetailsName = contactName
-    }
+    }*/
 }
